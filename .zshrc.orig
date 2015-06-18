@@ -1,0 +1,21 @@
+#source /usr/share/doc/pkgfile/command-not-found.zsh
+
+autoload -U promptinit
+promptinit
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=100000
+setopt autocd extendedglob
+unsetopt beep
+bindkey -e
+setopt HIST_IGNORE_ALL_DUPS
+setopt PRINT_EXIT_VALUE
+setopt MENU_COMPLETE
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/jacek/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
