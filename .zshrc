@@ -43,5 +43,8 @@ ZSH_THEME="philips"
 plugins=(archlinux command-coloring command-not-found kate osx vagrant git)
 
 source $ZSH/oh-my-zsh.sh
-. <(npm completion)
 # Customize to your needs...
+
+for dir in `ls /home/jacek/Programs/`; do
+  PATH=/home/jacek/Programs/$dir/bin:$PATH
+done;
