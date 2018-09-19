@@ -1,4 +1,5 @@
 # Path to your oh-my-zsh configuration.
+
 ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
@@ -40,11 +41,36 @@ ZSH_THEME="philips"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(archlinux command-coloring command-not-found kate osx vagrant git)
+plugins=(command-coloring command-not-found git)
 
 source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
-
 for dir in `ls /home/jacek/Programs/`; do
   PATH=/home/jacek/Programs/$dir/bin:$PATH
 done;
+
+# PATH=/home/jacek/anaconda3/bin:$PATH
+alias v=vim
+alias jn="jupyter notebook"
+alias gev="source /home/jacek/golemenv/bin/activate"
+alias gev_dev="source /home/jacek/golemenv_dev/bin/activate"
+alias avenv="source /home/jacek/avenv/bin/activate"
+alias pwdc="pwd | xclip"
+function cdp() {
+    cd $(xclip -o)
+}
+alias grp="grep --color=always"
+
+autoload -U zmv
+
+function chpwd() {
+    emulate -L zsh
+    ls
+}
+
+PATH=/home/jacek/.cargo/bin:$PATH
+_
+bindkey \^U backward-kill-line
+# alias pip='noglob pip'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
